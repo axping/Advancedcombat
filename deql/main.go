@@ -36,6 +36,17 @@ type R struct {
 	Data    interface{} `json:"data"`
 }
 
+type Err struct {
+	Error     string `json:"error"`
+	ErrorCode string `json:"error_code"`
+}
+
+//错误返回结构体
+type ErrR struct {
+	HttpSC int
+	Error  Err
+}
+
 //创建一个返回结果
 func NewR(message string, code int, data interface{}) *R {
 	return &R{Message: message, Code: code, Data: data}
@@ -54,7 +65,6 @@ func (r R) JSON() string {
 }
 
 //响应结果结束
-
 var MyDB *sql.DB
 
 func main() {
@@ -166,15 +176,17 @@ func checkErr(err error) {
 	}
 }
 
+//网络请求流程
+//handler -> ( 校验 ) validation{ 1:request ( 请求是否合法 ), 2: user ( 是否是注册用户 ) } -> ( 逻辑处理 ) business logic -> ( 响应结果 )Response
 func server() {
 	http.HandleFunc("/", index)
 	//URL 定义
 	//用户注册:/user/register
 	//用户登入:/user/login
 	//用户属性:/user/info
-	//用户授权:/user/licence
 
-	//发布文章属性
+	//用户获取授权请求访问接口码
+	//用户授权:/user/licence
 
 	//生成uuid
 	http.HandleFunc("/uuid/generate", genUuid)
