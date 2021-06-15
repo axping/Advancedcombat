@@ -1,0 +1,294 @@
+<html lang="zh-CN" class="translated-ltr"><head>
+    <title>导航栏 - 布局 - Spectre.css CSS 框架</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Navbar is a layout container that appears in the header of apps and websites. Spectre.css CSS Framework is a lightweight, responsive and modern CSS framework for faster and extensible development.">
+    <meta name="author" content="Yan Zhu">
+    <meta property="og:url" content="https://picturepan2.github.io/spectre/layout/navbar.html">
+    <meta property="og:title" content="Navbar - Layout - Spectre.css CSS Framework">
+    <meta property="og:description" content="Navbar is a layout container that appears in the header of apps and websites. Spectre.css CSS Framework is a lightweight, responsive and modern CSS framework for faster and extensible development.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@spectrecss">
+    <meta name="twitter:creator" content="@picturepan2">
+    <link rel="shortcut icon" href="../img/favicons/favicon.ico">
+    <link rel="icon" href="../img/favicons/favicon.png">
+    <link rel="stylesheet" href="../dist/spectre.min.css">
+    <link rel="stylesheet" href="../dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="../dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="../dist/docs.min.css">
+    <link rel="canonical" href="https://picturepan2.github.io/spectre/layout/navbar.html">
+  <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css"><meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><link rel="preload" href="https://adservice.google.com.hk/adsid/integrator.js?domain=picturepan2.github.io" as="script"><script src="https://www.googletagservices.com/activeview/js/current/osd.js"></script><script type="text/javascript" src="https://adservice.google.com.hk/adsid/integrator.js?domain=picturepan2.github.io"></script><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=picturepan2.github.io" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=picturepan2.github.io"></script></head>
+  <body data-enfi-version="1.0.0">
+    <div class="docs-container off-canvas off-canvas-sidebar-show">
+      <div class="docs-navbar"><a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar"><i class="icon icon-menu"></i></a>
+        <div class="btns d-flex">
+          <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input class="docs-search form-input ds-input" type="text" placeholder="搜索文档" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-label="搜索输入" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: -apple-system, system-ui, system-ui, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="ds-dataset-1"></div></span></span><a class="btn ml-1" href="https://www.paypal.me/picturepan2" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贝宝</font></font></a><a class="btn btn-primary ml-1" href="https://github.com/picturepan2/spectre" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GitHub</font></font></a>
+        </div>
+      </div>
+      <div class="docs-sidebar off-canvas-sidebar" id="sidebar">
+        <div class="docs-brand"><a class="docs-logo" href="../index.html"><img src="../img/spectre-logo.svg" alt="Spectre.css CSS 框架">
+            <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幽灵</font></font></h2><small class="label label-secondary text-bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档</font></font></small></a>
+        </div>
+        <div class="docs-nav">
+          <div class="accordion-container">
+            <div class="accordion">
+              <input id="accordion-getting-started" type="checkbox" name="docs-accordion-checkbox" hidden="">
+              <label class="accordion-header c-hand" for="accordion-getting-started"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">入门</font></font></label>
+              <div class="accordion-body">
+                <ul class="menu menu-nav">
+                  <li class="menu-item"><a href="../getting-started/installation.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../getting-started/custom.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">定制版</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../getting-started/browsers.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">浏览器支持</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../getting-started/whatsnew.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">什么是新的</font></font></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="accordion">
+              <input id="accordion-elements" type="checkbox" name="docs-accordion-checkbox" hidden="">
+              <label class="accordion-header c-hand" for="accordion-elements"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">元素</font></font></label>
+              <div class="accordion-body">
+                <ul class="menu menu-nav">
+                  <li class="menu-item"><a href="../elements/typography.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">排版</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../elements/tables.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">表</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../elements/buttons.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">纽扣</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../elements/forms.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">形式</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../elements/icons.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图标.css</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../elements/labels.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">标签</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../elements/code.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">代码</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../elements/media.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">媒体</font></font></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="accordion">
+              <input id="accordion-layout" type="checkbox" name="docs-accordion-checkbox" hidden="" checked="checked">
+              <label class="accordion-header c-hand" for="accordion-layout"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">布局</font></font></label>
+              <div class="accordion-body">
+                <ul class="menu menu-nav">
+                  <li class="menu-item"><a href="../layout/grid.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">弹性盒网格</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../layout/responsive.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">反应灵敏</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../layout/hero.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英雄</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../layout/navbar.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">导航栏</font></font></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="accordion">
+              <input id="accordion-components" type="checkbox" name="docs-accordion-checkbox" hidden="">
+              <label class="accordion-header c-hand" for="accordion-components"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">组件</font></font></label>
+              <div class="accordion-body">
+                <ul class="menu menu-nav">
+                  <li class="menu-item"><a href="../components/accordions.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">手风琴</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/avatars.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">头像</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/badges.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">徽章</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/bars.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">酒吧</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/breadcrumbs.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">面包屑</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/cards.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">牌</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/chips.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">筹码</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/empty.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">空状态</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/menu.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">菜单</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/modals.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模态</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/nav.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">导航</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/pagination.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分页</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/panels.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">面板</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/popovers.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">约夏克布丁</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/steps.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">脚步</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/tabs.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">标签</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/tiles.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">瓷砖</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/toasts.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">吐司</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../components/tooltips.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">工具提示</font></font></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="accordion">
+              <input id="accordion-utilities" type="checkbox" name="docs-accordion-checkbox" hidden="">
+              <label class="accordion-header c-hand" for="accordion-utilities"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">公用事业</font></font></label>
+              <div class="accordion-body">
+                <ul class="menu menu-nav">
+                  <li class="menu-item"><a href="../utilities/colors.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">颜色</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../utilities/cursors.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">光标</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../utilities/display.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">展示</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../utilities/divider.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分隔线</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../utilities/loading.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加载中</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../utilities/position.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">位置</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../utilities/shapes.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">形状</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../utilities/text.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文本</font></font></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="accordion">
+              <input id="accordion-experimentals" type="checkbox" name="docs-accordion-checkbox" hidden="">
+              <label class="accordion-header c-hand" for="accordion-experimentals"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">实验</font></font></label>
+              <div class="accordion-body">
+                <ul class="menu menu-nav">
+                  <li class="menu-item"><a href="../experimentals/viewer-360.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">360 度查看器</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../experimentals/autocomplete.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动完成</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../experimentals/calendars.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">日历</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../experimentals/carousels.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">旋转木马</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../experimentals/comparison.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">比较滑块</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../experimentals/filters.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">过滤器</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../experimentals/meters.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">米</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../experimentals/off-canvas.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">画布外</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../experimentals/parallax.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视差</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../experimentals/progress.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">进步</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../experimentals/sliders.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">滑块</font></font></a>
+                  </li>
+                  <li class="menu-item"><a href="../experimentals/timelines.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">时间线</font></font></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><a class="off-canvas-overlay" href="#close"></a>
+      <div class="off-canvas-content">
+        <div class="docs-content" id="content">
+          <div class="container" id="navbar">
+            <h3 class="s-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">导航栏</font></font><a class="anchor" href="#navbar" aria-hidden="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">#</font></font></a></h3>
+            <div class="docs-ad">
+              <div class="hide-md text-center">
+                <script src="https://partner.googleadservices.com/gampad/cookie.js?domain=picturepan2.github.io&amp;callback=_gfp_s_&amp;client=ca-pub-2225124559530218"></script><script src="https://pagead2.googlesyndication.com/pagead/js/r20210607/r20190131/show_ads_impl_fy2019.js" id="google_shimpl"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- GitHub-lg--><ins class="adsbygoogle mx-auto" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2225124559530218" data-ad-slot="9894180784" data-adsbygoogle-status="done" data-ad-status="filled"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;" tabindex="0" title="广告" aria-label="广告"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:728px;height:90px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="90" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-2225124559530218&amp;output=html&amp;h=90&amp;slotname=9894180784&amp;adk=848594752&amp;adf=3639412938&amp;pi=t.ma~as.9894180784&amp;w=728&amp;lmt=1593669168&amp;psa=1&amp;format=728x90&amp;url=https%3A%2F%2Fpicturepan2.github.io%2Fspectre%2Flayout%2Fnavbar.html&amp;flash=0&amp;wgl=1&amp;uach=WyJtYWNPUyIsIjEwXzE1XzciLCJ4ODYiLCIiLCI5MS4wLjQ0NzIuNzciLFtdXQ..&amp;dt=1623746061924&amp;bpp=2&amp;bdt=121&amp;idt=23&amp;shv=r20210607&amp;cbv=%2Fr20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;correlator=917605478178&amp;frm=20&amp;pv=2&amp;ga_vid=546674467.1623733335&amp;ga_sid=1623746062&amp;ga_hid=597991850&amp;ga_fc=0&amp;u_tz=480&amp;u_his=19&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=820&amp;u_aw=1440&amp;u_cd=24&amp;u_nplug=3&amp;u_nmime=4&amp;adx=340&amp;ady=124&amp;biw=1167&amp;bih=608&amp;scr_x=0&amp;scr_y=0&amp;eid=31061334&amp;oid=3&amp;pvsid=4227383498041793&amp;pem=616&amp;ref=https%3A%2F%2Fpicturepan2.github.io%2Fspectre%2Flayout%2Fhero.html&amp;eae=0&amp;fc=896&amp;brdim=268%2C25%2C268%2C25%2C1440%2C25%2C1167%2C719%2C1167%2C608&amp;vis=1&amp;rsz=%7C%7CeE%7C&amp;abl=CS&amp;pfx=0&amp;fu=0&amp;bc=31&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;xpc=0c1DmttR27&amp;p=https%3A//picturepan2.github.io&amp;dtd=37" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" allow="conversion-measurement 'src'" data-google-container-id="a!1" data-google-query-id="CJ6K9bmdmfECFbUi1QodVDsHQg" data-load-complete="true"></iframe></ins></ins></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+              </div>
+              <div class="show-md text-center">
+                <!-- GitHub-sm--><ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 0px;" data-ad-client="ca-pub-2225124559530218" data-ad-slot="9278881734" data-adsbygoogle-status="done" data-ad-status="unfilled"><ins id="aswift_1_expand" style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 300px; background-color: transparent;" tabindex="0" title="广告" aria-label="广告"><ins id="aswift_1_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 300px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:300px;height:250px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="250" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-2225124559530218&amp;output=html&amp;h=250&amp;slotname=9278881734&amp;adk=1274211985&amp;adf=3507839826&amp;pi=t.ma~as.9278881734&amp;w=300&amp;lmt=1593669168&amp;psa=1&amp;format=300x250&amp;url=https%3A%2F%2Fpicturepan2.github.io%2Fspectre%2Flayout%2Fnavbar.html&amp;flash=0&amp;wgl=1&amp;uach=WyJtYWNPUyIsIjEwXzE1XzciLCJ4ODYiLCIiLCI5MS4wLjQ0NzIuNzciLFtdXQ..&amp;dt=1623746061926&amp;bpp=1&amp;bdt=123&amp;idt=42&amp;shv=r20210607&amp;cbv=%2Fr20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=728x90&amp;correlator=917605478178&amp;frm=20&amp;pv=1&amp;ga_vid=546674467.1623733335&amp;ga_sid=1623746062&amp;ga_hid=597991850&amp;ga_fc=0&amp;u_tz=480&amp;u_his=19&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=820&amp;u_aw=1440&amp;u_cd=24&amp;u_nplug=3&amp;u_nmime=4&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1167&amp;bih=608&amp;scr_x=0&amp;scr_y=0&amp;eid=31061334&amp;oid=3&amp;pvsid=4227383498041793&amp;pem=616&amp;ref=https%3A%2F%2Fpicturepan2.github.io%2Fspectre%2Flayout%2Fhero.html&amp;eae=0&amp;fc=896&amp;brdim=268%2C25%2C268%2C25%2C1440%2C25%2C1167%2C719%2C1167%2C608&amp;vis=1&amp;rsz=%7C%7CenEr%7C&amp;abl=CS&amp;pfx=0&amp;fu=32768&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;xpc=xT5kep3bmy&amp;p=https%3A//picturepan2.github.io&amp;dtd=46" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" allow="conversion-measurement 'src'" data-google-container-id="a!2" data-google-query-id="COyV9bmdmfECFVYG1QodNNsGsg" data-load-complete="true"></iframe></ins></ins></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+              </div>
+            </div>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">导航栏是一个布局容器，出现在应用程序和网站的标题中。</font></font></p>
+            <div class="docs-demo columns">
+              <div class="column">
+                <div class="navbar">
+                  <div class="navbar-section"><a class="navbar-brand text-bold mr-2" href="#navbar"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">幽灵.CSS</font></font></a><a class="btn btn-link" href="#navbar"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档</font></font></a><a class="btn btn-link" href="https://github.com/picturepan2/spectre"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GitHub</font></font></a></div>
+                  <div class="navbar-section">
+                    <div class="input-group input-inline">
+                      <input class="form-input" type="text" placeholder="搜索">
+                      <button class="btn btn-primary input-group-btn"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">搜索</font></font></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+              导航栏组件可以包括徽标品牌、导航链接和按钮、搜索框或这些元素的任意组合。</font><font style="vertical-align: inherit;">带有</font></font><code>navbar-section</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">类的</font><font style="vertical-align: inherit;">每个部分</font><font style="vertical-align: inherit;">将均匀分布在容器中。
+            </font></font></p>
+            <pre class="code" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-section"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-brand mr-2"</span>&gt;</span>Spectre.css<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-link"</span>&gt;</span>Docs<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-link"</span>&gt;</span>GitHub<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-section"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"input-group input-inline"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-input"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"search"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-primary input-group-btn"</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</code></pre>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以使用</font></font><code>navbar-center</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">class 来获得居中的部分。</font></font></p>
+            <div class="docs-demo columns">
+              <div class="column col-12">
+                <div class="navbar">
+                  <div class="navbar-section"><a class="btn btn-link" href="#navbar"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档</font></font></a><a class="btn btn-link" href="#navbar"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">例子</font></font></a></div>
+                  <div class="navbar-center"><img src="../img/spectre-logo.svg" alt="Spectre.css"></div>
+                  <div class="navbar-section"><a class="btn btn-link" href="https://twitter.com/spectrecss"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">推特</font></font></a><a class="btn btn-link" href="https://github.com/picturepan2/spectre"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GitHub</font></font></a></div>
+                </div>
+              </div>
+            </div>
+            <pre class="code" data-lang="HTML"><code><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-section"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-link"</span>&gt;</span>Docs<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-link"</span>&gt;</span>Examples<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-center"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- centered logo or brand --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-section"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-link"</span>&gt;</span>Twitter<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-link"</span>&gt;</span>GitHub<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</code></pre>
+          </div>
+          <div class="docs-footer container grid-lg" id="copyright">
+            <p><a href="https://github.com/picturepan2/spectre" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GitHub</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> · </font></font><a href="https://twitter.com/spectrecss" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Twitter</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> · </font></font><a href="https://www.paypal.me/picturepan2" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PayPal 捐赠</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">· </font></font><a href="https://www.patreon.com/spectrecss" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Patreon 赞助商</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">· 版本</font></font><span class="version"></span></p>
+            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">由</font><a href="https://twitter.com/picturepan2" target="_blank"><font style="vertical-align: inherit;">Yan Zhu</font></a><font style="vertical-align: inherit;">使用</font></font><span class="text-error"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">♥</font></font></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设计和建造</font><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">在</font><a href="https://github.com/picturepan2/spectre/blob/master/LICENSE" target="_blank"><font style="vertical-align: inherit;">MIT</font></a><font style="vertical-align: inherit;">许可下获得</font><a href="https://github.com/picturepan2/spectre/blob/master/LICENSE" target="_blank"><font style="vertical-align: inherit;">许可</font></a><font style="vertical-align: inherit;">。</font></font><a href="https://twitter.com/picturepan2" target="_blank"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font><a href="https://github.com/picturepan2/spectre/blob/master/LICENSE" target="_blank"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script>
+      docsearch({ 
+      apiKey: 'bede06373c5a1fa3c1bbe8401e24c653', 
+      indexName: 'picturepan2_spectre', 
+      inputSelector: '.docs-search', 
+      debug: true
+      }); 
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-2702768-8', 'auto');
+      ga('send', 'pageview');
+    </script>
+  
+<div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" width="20" height="20" alt="Google 翻译"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">原文</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">提供更好的翻译建议</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;" tabindex="0" title="广告" aria-label="广告"><ins id="aswift_2_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-2225124559530218&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1593669168&amp;plat=1%3A16809992%2C2%3A16809992%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fpicturepan2.github.io%2Fspectre%2Flayout%2Fnavbar.html&amp;ea=0&amp;flash=0&amp;pra=7&amp;wgl=1&amp;uach=WyJtYWNPUyIsIjEwXzE1XzciLCJ4ODYiLCIiLCI5MS4wLjQ0NzIuNzciLFtdXQ..&amp;dt=1623746061928&amp;bpp=1&amp;bdt=125&amp;idt=48&amp;shv=r20210607&amp;cbv=%2Fr20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=728x90%2C300x250&amp;nras=1&amp;correlator=917605478178&amp;frm=20&amp;pv=1&amp;ga_vid=546674467.1623733335&amp;ga_sid=1623746062&amp;ga_hid=597991850&amp;ga_fc=0&amp;u_tz=480&amp;u_his=19&amp;u_java=0&amp;u_h=900&amp;u_w=1440&amp;u_ah=820&amp;u_aw=1440&amp;u_cd=24&amp;u_nplug=3&amp;u_nmime=4&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1167&amp;bih=608&amp;scr_x=0&amp;scr_y=0&amp;eid=31061334&amp;oid=3&amp;pvsid=4227383498041793&amp;pem=616&amp;ref=https%3A%2F%2Fpicturepan2.github.io%2Fspectre%2Flayout%2Fhero.html&amp;eae=2&amp;fc=896&amp;brdim=268%2C25%2C268%2C25%2C1440%2C25%2C1167%2C719%2C1167%2C608&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;ifi=3&amp;uci=a!3&amp;fsb=1&amp;dtd=52" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" allow="conversion-measurement 'src'" data-google-container-id="a!3" data-load-complete="true"></iframe></ins></ins></ins><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe id="google_osd_static_frame_4700053773085" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20210607/r20190131/zrt_lookup.html" style="display: none;"></iframe></html>
